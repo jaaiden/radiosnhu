@@ -1,0 +1,131 @@
+<?php
+
+class AdminController extends BaseController {
+
+  public function showCreateCode()
+  {
+    return View::make('admin.createuser');
+  }
+
+  public function doCreateCode()
+  {
+
+    $code = new Code;
+    $code->code = Input::get('code');
+    $code->email = Input::get('email');
+    $code->save();
+
+    $djemail = $code->email;
+    $djcode = $code->code;
+
+    Mail::send('emails.auth.createuser', array('code' => $djcode), function($message)
+    {
+        $message->to(Input::get('email'))->subject('Welcome to RadioSNHU!');
+    });
+
+    echo "A code has been sent to " . Input::get('email') . ". Redirecting...";
+    return Redirect::to('admin');
+  }
+
+  public function removeCode($code)
+  {
+    $code = Code::where('code', '=', $code)->first();
+    $code->delete();
+    return Redirect::to('admin');
+  }
+
+  public function deleteDJ($id)
+  {
+    $dj = DJ::find($id);
+    $dj->delete();
+    return Redirect::to('admin'); 
+  }
+
+  public function editDJ($id)
+  {
+    $dj = DJ::find($id)->first();
+    return View::make('admin.edituser')->with('dj', $dj);
+  }
+
+  public function updateDJ()
+  {
+    $dj = DJ::find(intval(Input::get('djid')));
+    $dj->name = Input::get('name');
+    $dj->showname = Input::get('showname');
+    $dj->showtime = Input::get('showtime');
+    $dj->aboutdj = Input::get('aboutdj');
+    $dj->aboutshow = Input::get('aboutshow');
+    $dj->twitter = Input::get('twitter');
+    $dj->save();
+    return Redirect::to('admin');
+  }
+
+  public function deleteAccount($email)
+  {
+    $user = User::where('username', '=', $email)->firstOrFail();
+    $user->delete();
+    return Redirect::to('admin/accounts');
+  }
+
+  public function updateAboutPage()
+  {
+    $content = Input::get('content');
+    $aboutpage = Content::where('section', 'about')->first();
+    $aboutpage->content = $content;
+    if($aboutpage->save())
+    {
+      return Response::json(array('success' => 'yes'));
+    }else{
+      return Response::json(array('success' => 'no'));
+    }
+  }
+
+  public function updateEventsPage()
+  {
+    $name = Input::get('eventname');
+    $desc = Input::get('eventdesc');
+    $img = Input::get('eventimg');
+
+    $ename = Content::section('eventname');
+    $ename->content = $name;
+    $ename->save();
+
+    $edesc = Content::section('eventdesc');
+    $edesc->content = $desc;
+    $edesc->save();
+
+    $eimg = Content::section('eventimg');
+    $eimg->content = $img;
+    $eimg->save();
+
+    return Redirect::to('admin/edit/events');
+  }
+
+  public function addAlumni()
+  {
+    $name = Input::get('name');
+    $desc = Input::get('desc');
+    $alumni = new Alumni;
+    $alumni->name = $name;
+    $alumni->description = $desc;
+    $alumni->save();
+    return Redirect::to('admin/edit/alumni');
+  }
+
+  public function updateAlumni($id)
+  {
+    $alumni = Alumni::find($id);
+    $alumni->name = Input::get('name');
+    $alumni->description = Input::get('desc');
+    $alumni->save();
+    return Redirect::to('admin/edit/alumni');
+  }
+
+  public function deleteAlumni($id)
+  {
+    $alumni = Alumni::find($id);
+    $alumni->delete();
+    return Redirect::to('admin/edit/alumni');
+  }
+
+}

@@ -1,0 +1,255 @@
+/*
+ * Author: Carlos Alvarez
+ * URL: http://alvarez.is
+ *
+ * Project Name: FLATTY - Free Bootstrap 3 Theme
+ * Version: 1.0
+ * URL: http://blacktie.co
+ */
+
+body {
+  background-color: #f2f2f2;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #555;
+  
+  /* Stardust Tribute
+  background-image: url('https://pbs.twimg.com/profile_images/2173516694/BlackStar_400x400.PNG');
+  background-position: 3% 5%;
+  background-repeat: no-repeat;
+  */
+
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: #333;
+}
+
+h1 {
+	font-size: 40px;
+}
+
+h3 {
+	color: #95a5a6;
+	font-weight: 400;
+}
+
+h4 {
+	color: #95a5a6;
+	font-weight: 400;
+	font-size: 20px;
+}
+
+/* Paragraph & Typographic */
+p {
+    line-height: 28px;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.centered {
+    text-align: center;
+}
+
+/* Links */
+a {
+    color: #0e356f;
+    word-wrap: break-word;
+
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+a:hover,
+a:focus {
+    color: #7b7b7b;
+    text-decoration: none;
+    outline: 0;
+}
+
+a:before,
+a:after {
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+ hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.navbar-default {
+  background-color: #0e356f;
+	border-color: transparent;
+}
+
+.navbar-default .navbar-brand {
+	color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: white;
+    cursor: pointer;
+}
+
+.navbar-default .navbar-nav .navbar-text {
+    color: white;
+}
+
+/* Helpers */
+
+.mt {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.form-control {
+	height: 42px;
+	font-size: 18px;
+	width: 280px;
+}
+
+i {
+	margin: 8px;
+	color: #0e356f;
+}
+
+.snhu-btn {
+  background-color: #0e356f;
+  border-color: #0e356f;
+  color: #fff;
+}
+
+.snhu-btn:hover {
+  color:#fff;
+  background-color: #539bd4;
+  border-color: #539bd4;
+}
+
+.snhu-btn.active {
+  background-color: #fdcb54;
+  border-color: #fdcb54;
+  color: #0e356f;
+}
+
+.alert-snhu {
+  background-color: #fdcb54;
+  border-color: #fdcb54;
+  color: #0e356f;
+}
+
+
+/* HeaderWrap */
+#headerwrap {
+	/*background: url(../../../../resources/logo.png) no-repeat center top;*/
+	background-color: #0e356f;
+	margin-top: -40px;
+	padding-top:100px;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 150px;
+	width: 100%;
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#headerwrap h1 {
+	margin-top: 30px;
+	margin-bottom: 15px;
+	color: white;
+	font-size: 45px;
+	font-weight: 400;
+	letter-spacing: 1px;
+}
+
+#headerwrap h2, h3, h4, h5, h6 {
+    color: white;
+    font-weight: 400;
+}
+
+.curplaying {
+    margin-top: -20px;
+    color: white;
+    font-size: 45px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+#headerwrap a {
+    cursor: pointer;
+    color: white;
+    font-weight: 400;
+/*     padding-right: 20px; */
+}
+
+#headerwrap a:hover {
+    color:#cfdfff;
+}
+
+#headerwrap .btn-toolbar {
+    margin-top: 58px;
+}
+
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: #333;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h3 {
+    color: #95a5a6;
+    font-weight: 400;
+}
+
+h4 {
+    color: #95a5a6;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+/* Paragraph & Typographic */
+p {
+    line-height: 28px;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+#top-link-block.affix-top {
+    position: absolute; /* allows it to "slide" up into view */
+    bottom: -100px; /* negative of the offset - height of link element */
+    right: 45px; /* padding from the left side of the window */
+}
+#top-link-block.affix {
+    position: fixed; /* keeps it on the bottom once in view */
+    bottom: 0px; /* height of link element */
+    right: 45px; /* padding from the left side of the window */
+}
